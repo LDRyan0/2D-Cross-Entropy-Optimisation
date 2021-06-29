@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import math
 from scipy.stats import beta
 
+# -------------------------------------------------------------------------------------------------------------------------------------
 ## Set design parameters - Here we have only X and Y
 x_range = (-5, 5)
 y_range = (-5, 5)
@@ -22,6 +23,7 @@ N_it = 10 # number of iterations
 # Fitness function
 def func(x,y):
     return -(-20*math.exp(-0.2*math.sqrt(0.5*(x**2+y**2)))-math.exp(0.5*(math.cos(2*math.pi*x)+math.cos(2*math.pi*y)))+20+math.exp(1))
+# -------------------------------------------------------------------------------------------------------------------------------------
 
 # Creating arrays 
 average_fitness_plot = np.zeros(N_it)
