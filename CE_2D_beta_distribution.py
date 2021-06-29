@@ -30,7 +30,6 @@ fBestAntenna_plot = np.zeros(N_it)
 ## Set initial distribution parameters
 beta_alpha = np.ones((2,1))
 beta_beta = np.ones((2,1))
-print(beta_alpha)
 
 ## Start Cross-Entropy Optimization Algorithm
 for i in range(N_it):
@@ -88,3 +87,7 @@ ax.set_ylabel('Fitness function')
 ax.legend(['best fitness', 'average fitness'])
 ax.grid()
 plt.show()
+
+# output the best x and y value, corresponding fitness
+print("Best point (x,y): ({}, {})".format(best_x, best_y))
+print("    Best fitness:", fBestAntenna)
