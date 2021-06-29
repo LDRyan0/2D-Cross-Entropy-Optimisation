@@ -5,7 +5,6 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.ticker as MaxNLocator
 import math
 from scipy.stats import beta
 
