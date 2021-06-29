@@ -97,7 +97,7 @@ ax.grid()
 plt.show()
 
 # output the best x and y value, corresponding fitness
-print(" Best point (x,y): ({}, {})".format(best_x, best_y))
-print("     Best fitness:", fBestAntenna)
-print("Total time taken : {:.4f} ms".format(total*1000))
+print("Best point (x,y): ({}, {})".format(best_x, best_y))
+print("    Best fitness:", fBestAntenna)
+print("Computation time: {:.4f} ms".format(total*1000))
 # -------------------------------------------------------------------------------------------------------------------------------------
