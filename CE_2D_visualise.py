@@ -1,7 +1,7 @@
-# Copyright 2016, Maria Kovaleva, David Bulger
-# Macquarire University. All rights reserved
+# Copyright 2016, Maria Kovaleva, David Bulger, Liam Ryan
+# Macquarire University. All rights reserved.
 
-# Adapted from MATLAB to Python by Liam Ryan 29/06/2020
+# Adapted from MATLAB to Python by Liam Ryan 2020
 
 import numpy as np 
 import math
@@ -20,16 +20,17 @@ smoothing = 0.5 # smoothing parameter
 fBestAntenna = -100000 # initial best
 N_it = 15 # number of iterations
 
-# Fitness function
-def func(x,y):
+# Fitness function (use np.cos(), np.exp() etc as x and y are vectors)
+# Vectorisation is used to speed up the algorithm
+def func(x,y): # x and y are vectors
     # Booth's
-    # return -((x+2*y-7)**2+(2*x+y-5)**2)
+    # return -(np.square(x+2*y-7)+np.square(2*x+y-5))
     # Paraboloid
-    # return -((x-2)**2 + (y+1)**2)
-    # Ackey's
-    return -(-20*math.exp(-0.2*math.sqrt(0.5*(x**2+y**2)))-math.exp(0.5*(math.cos(2*math.pi*x)+math.cos(2*math.pi*y)))+20+math.exp(1))
-# --------------------------------------------------------------
+    # return -(np.square(x-2) + np.square(y+1))
+    # Ackley's
+    return -(-20*np.exp(-0.2*np.sqrt(0.5*(np.square(x)+np.square(y))))-np.exp(0.5*(np.cos(2*math.pi*x)+np.cos(2*math.pi*y)))+20+math.exp(1))
 
+# --------------------------------------------------------------
 
 # Allow for interactivity in matplotlib plots
 plt.ion()
@@ -46,6 +47,9 @@ beta_beta = np.ones((2,1)) # x and y values for beta
 x_vec = np.linspace(x_range[0], x_range[1], 100)
 y_vec = np.linspace(y_range[0], y_range[1], 100) 
 
+# Obtain the 2D function values
+f = func(x_vec[:, None], y_vec[None, :])
+
 ## Start Cross-Entropy Optimization Algorithm
 for i in range(N_it):
     # Creating and formatting the subplots
@@ -56,11 +60,6 @@ for i in range(N_it):
     else:
         fig.suptitle("Generation " + str(i+1), fontsize=18)
 
-    # Obtaining function values using specified function
-    f = np.empty((np.size(x_vec), np.size(y_vec)))
-    for ii in range(np.size(x_vec)):
-        for jj in range(np.size(y_vec)):
-            f[jj,ii] = func(x_vec[ii], y_vec[jj])
 
     main_ax.contourf(x_vec, y_vec, f, 20) # adding contour plot to main image
     
@@ -94,16 +93,6 @@ for i in range(N_it):
     elite_y = y[sortOrder]
     elite_y_real = y_real[sortOrder]
 
-    # Formatting for sampling results visualisation
-    main_ax.set_title('Sampling Results')
-    main_ax.set_xlabel('x')
-    main_ax.set_ylabel('y')
-    sa = main_ax.scatter(x_real, y_real, c='#000000')
-    se = main_ax.scatter(elite_x_real, elite_y_real, c='#ff0000', marker='x') # elite values
-    sb = main_ax.scatter(elite_x_real[0], elite_y_real[0], c='#11FFEE', marker='+') # best value
-    main_ax.legend((sa, se, sb), ('All', 'Elite', 'Best'), fontsize=6, framealpha=1, 
-        loc='lower right')
-
     # has this generation produced a new best antenna?
     if fitness[0] > fBestAntenna:
         fBestAntenna = fitness[0]
@@ -114,7 +103,6 @@ for i in range(N_it):
     average_fitness_plot[i] = np.mean(fitness)
     fBestAntenna_plot[i] = fBestAntenna
     
-    #fit_ax = plt.subplot(1, 2, 2)
     fit_ax.plot(np.arange(1, i+2), fBestAntenna_plot[0:i+1])
     fit_ax.plot(np.arange(1, i+2), average_fitness_plot[0:i+1])
     fit_ax.set_title('Fitness over generations')
@@ -139,16 +127,19 @@ for i in range(N_it):
     dist_x = beta.pdf(x_vec, beta_alpha[0,0], beta_beta[0,0], loc=x_range[0], scale=(x_range[1]-x_range[0]))
     dist_y = beta.pdf(y_vec, beta_alpha[1,0], beta_beta[1,0], loc=y_range[0], scale=(y_range[1]-y_range[0]))
 
-    # Create 2D array to store 2D distribution values
-    d = np.empty((np.size(x_vec), np.size(y_vec)))
-
-    # PDF visual using 2D beta distribution
-    for ii in range(np.size(x_vec)):
-        for jj in range(np.size(y_vec)):
-            d[jj,ii] = dist_x[ii]*dist_y[jj]
+    # Create the 2D distribution (x, y no correlation)
+    d = np.outer(dist_y, dist_x)
     
-    # Plot the PDF of the new distribution
-    main_ax.contour(x_vec, y_vec, d, 5) 
+    # Formatting for sampling results visualisation
+    main_ax.set_title('Sampling Results')
+    main_ax.set_xlabel('x')
+    main_ax.set_ylabel('y')
+    sa = main_ax.scatter(x_real, y_real, c='#000000')
+    se = main_ax.scatter(elite_x_real, elite_y_real, c='#ff0000', marker='x') # elite values
+    sb = main_ax.scatter(elite_x_real[0], elite_y_real[0], c='#11FFEE', marker='+') # best value
+    dist = main_ax.contour(x_vec, y_vec, d, 5, colors='blue', linestyles='dashed') 
+    main_ax.legend((sa, se, sb), ('All', 'Elite', 'Best'), fontsize=6, framealpha=1, 
+        loc='lower right')
 
     # Give terminal output of the results of the current generation
     print("Generation " + str(i+1))
