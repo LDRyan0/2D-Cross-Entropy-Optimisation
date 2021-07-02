@@ -59,7 +59,6 @@ for i in range(N_it):
     else:
         fig.suptitle("Generation " + str(i+1), fontsize=18)
 
-
     main_ax.contourf(x_vec, y_vec, f, 20) # adding contour plot to main image
     
     #  Sample 'x' and 'y' from the beta-distribution
@@ -73,10 +72,8 @@ for i in range(N_it):
     y = np.random.beta(beta_alpha_r[1,:], beta_beta_r[1,:])
     y_real = y * (y_range[1]-y_range[0]) + y_range[0]
 
-    # Fitness evaluation - Here is your Goal Function
-    fitness = np.zeros(genSize)
-    for j in range(genSize):
-        fitness[j] = func(x_real[j],y_real[j]) # previously defined function
+    # Obtain fitness values (utilising vectorisation)
+    fitness = func(x_real, y_real)
 
     # After fitness evaulation is done, we sort the best parameters (quicksort...O(n*logn))
     # More efficient implementation possible
@@ -155,7 +152,7 @@ for i in range(N_it):
 
 # -------------------------------------------------------------------------------------------------------------------------------------
 
-plt.close()
+plt.close() # close sample figure window
 
 # plot the results
 fig, fit_ax = plt.subplots()
@@ -171,7 +168,6 @@ fit_ax.grid()
 print("FINAL RESULTS")
 print("\tBest point (x,y) = ({}, {})".format(best_x, best_y))
 print("\t    Best fitness = {}\n".format(fBestAntenna))
-
 
 # Show plot and wait for key press before finishing
 plt.show()
