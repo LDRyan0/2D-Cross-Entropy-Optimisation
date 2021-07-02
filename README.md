@@ -5,4 +5,4 @@ Adapted & extended from original MATLAB files to Python/Jupyter by Liam Ryan (20
 Special thanks to David Bulger in his assistance.**
 
 Two dimensional optimisation algorithm using the [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method).
-Data is fitted to a [Beta Distribution](https://en.wikipedia.org/wiki/Beta_distribution) in the algorithm. Parameters and the [fitness function](https://en.wikipedia.org/wiki/Fitness_function) can easily be changed.
+Data is iteratively fitted to a [Beta Distribution](https://en.wikipedia.org/wiki/Beta_distribution) in the algorithm. Parameters and the [fitness function](https://en.wikipedia.org/wiki/Fitness_function) can easily be changed.
