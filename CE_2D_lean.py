@@ -1,7 +1,7 @@
 # Copyright 2016, Maria Kovaleva, David Bulger
 # Macquarire University. All rights reserved
 
-# Adapted from MATLAB to Python by Liam Ryan (2020)
+# Adapted from MATLAB to Python by Liam Ryan (2021)
 
 import numpy as np
 import matplotlib.pyplot as plt
