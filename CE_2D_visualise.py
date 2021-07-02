@@ -6,7 +6,6 @@
 import numpy as np 
 import math
 import matplotlib.pyplot as plt
-import os
 from scipy.stats import beta
 
 # ------------------- ADJUST PARAMETERS HERE -------------------
