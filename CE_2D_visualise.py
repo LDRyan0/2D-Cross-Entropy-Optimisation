@@ -1,5 +1,5 @@
-# Copyright 2016, Maria Kovaleva, David Bulger, Liam Ryan
-# Macquarire University. All rights reserved.
+# Copyright 2021, Maria Kovaleva, David Bulger, Liam Ryan
+# All rights reserved.
 
 # Adapted from MATLAB to Python by Liam Ryan (2021)
 
@@ -61,15 +61,10 @@ for i in range(N_it):
 
     main_ax.contourf(x_vec, y_vec, f, 20) # adding contour plot to main image
     
-    #  Sample 'x' and 'y' from the beta-distribution
-    # The goal is to create a vector of size (1,genSize)  
-    beta_alpha_r = np.tile(beta_alpha, genSize)
-    beta_beta_r = np.tile(beta_beta, genSize)
-    
-    # Sample from beta distribution
-    x = np.random.beta(beta_alpha_r[0,:], beta_beta_r[0,:])
+    # Sampling of the beta distribution
+    x = np.random.beta(beta_alpha[0], beta_beta[0], genSize)
     x_real = x * (x_range[1]-x_range[0]) + x_range[0] 
-    y = np.random.beta(beta_alpha_r[1,:], beta_beta_r[1,:])
+    y = np.random.beta(beta_alpha[1], beta_beta[1], genSize)
     y_real = y * (y_range[1]-y_range[0]) + y_range[0]
 
     # Obtain fitness values (utilising vectorisation)
