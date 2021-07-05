@@ -1,6 +1,6 @@
 # Cross Entropy 2D Optimisation (Beta Distribution)
 
-**Copyright 2016, Maria Kovaleva, David Bulger. Macquarire University. All rights reserved.  
+**Copyright 2021, Liam Ryan, Maria Kovaleva, David Bulger. All rights reserved.  
 Adapted & extended from original MATLAB files to Python/Jupyter by Liam Ryan (2020).
 Special thanks to David Bulger in his assistance.**
 
