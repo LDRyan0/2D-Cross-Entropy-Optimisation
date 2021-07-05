@@ -1,7 +1,7 @@
-# Copyright 2016, Maria Kovaleva, David Bulger
+# Copyright 2021, Liam Ryan, Maria Kovaleva, David Bulger
 # Macquarire University. All rights reserved
 
-# Adapted from MATLAB to Python by Liam Ryan (2020)
+# Adapted from MATLAB to Python by Liam Ryan (2021)
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -95,4 +95,3 @@ plt.show()
 print("\nBest point (x,y) = ({}, {})".format(best_x, best_y))
 print("    Best fitness =", fBestAntenna)
 print("Computation time = {:.4f} ms\n".format(total*1000))
-# -------------------------------------------------------------------------------------------------------------------------------------
