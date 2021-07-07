@@ -1,4 +1,4 @@
-# Copyright 2021, Maria Kovaleva, David Bulger, Liam Ryan
+# Copyright 2021, Liam Ryan, Maria Kovaleva, David Bulger
 # All rights reserved.
 
 # Adapted from MATLAB to Python by Liam Ryan (2021)
@@ -89,6 +89,9 @@ for i in range(N_it):
         fBestAntenna = fitness[0]
         best_x = elite_x[0]
         best_y = elite_y[0]
+        best_x_real = elite_x_real[0]
+        best_y_real = elite_y_real[0]
+
     
     # plot vs iterations
     average_fitness_plot[i] = np.mean(fitness)
@@ -134,7 +137,7 @@ for i in range(N_it):
 
     # Give terminal output of the results of the current generation
     print("Generation " + str(i+1))
-    print("\t Best point (x,y) = ({},{})".format(best_x, best_y))
+    print("\t Best point (x,y) = ({},{})".format(best_x_real, best_y_real))
     print("\t     Best fitness = " + str(fBestAntenna))
     print("\t  Average fitness = " + str(np.mean(fitness)))
     print("\t(alpha x, beta x) = ({},{})".format(beta_alpha[0,0], beta_beta[0,0]))
@@ -161,8 +164,8 @@ fit_ax.grid()
 
 # output the best x and y value, corresponding fitness
 print("FINAL RESULTS")
-print("\tBest point (x,y) = ({}, {})".format(best_x, best_y))
-print("\t    Best fitness = {}\n".format(fBestAntenna))
+print("\tBest point (x,y) = ({:.10f}, {:.10f})".format(best_x_real, best_y_real))
+print("\t    Best fitness = {:.10f}\n".format(fBestAntenna))
 
 # Show plot and wait for key press before finishing
 plt.show()
