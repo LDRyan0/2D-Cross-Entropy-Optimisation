@@ -1,4 +1,4 @@
-# Copyright 2016, Liam Ryan, Maria Kovaleva, David Bulger
+# Copyright 2021, Liam Ryan, Maria Kovaleva, David Bulger
 # All rights reserved.
 
 # Adapted from MATLAB to Python by Liam Ryan (2021)
