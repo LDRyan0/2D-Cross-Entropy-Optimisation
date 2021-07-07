@@ -1,5 +1,5 @@
-# Copyright 2021, Liam Ryan, Maria Kovaleva, David Bulger
-# Macquarire University. All rights reserved
+# Copyright 2016, Liam Ryan, Maria Kovaleva, David Bulger
+# All rights reserved
 
 # Adapted from MATLAB to Python by Liam Ryan (2021)
 
@@ -15,8 +15,8 @@ x_range = (-5, 5)
 y_range = (-5, 5)
 
 # Set Cross Entropy parameters
-genSize = 50 # generation size
-qElite = 20 # elite size (inclusive)
+genSize = 30 # generation size
+qElite = 12 # elite size (inclusive)
 smoothing = 0.5 # smoothing parameter
 fBestAntenna = -100000 # initial best
 N_it = 20 # number of iterations
@@ -55,14 +55,18 @@ for i in range(N_it):
     # only take qElite number of the total generation
     sortOrder = sortOrder[0:qElite]
     elite_x = x[sortOrder]
+    elite_x_real = x_real[sortOrder]
     elite_y = y[sortOrder]
+    elite_y_real = y_real[sortOrder]
 
     # has this generation produced a new best antenna?
     if fitness[0] > fBestAntenna:
         fBestAntenna = fitness[0]
         best_x = elite_x[0]
         best_y = elite_y[0]
-    
+        best_x_real = elite_x_real[0]
+        best_y_real = elite_y_real[0]
+
     # plot vs iterations
     average_fitness_plot[i] = np.mean(fitness)
     fBestAntenna_plot[i] = fBestAntenna
@@ -92,6 +96,7 @@ ax.grid()
 plt.show()
 
 # output the best x and y value, corresponding fitness
-print("\nBest point (x,y) = ({}, {})".format(best_x, best_y))
-print("    Best fitness =", fBestAntenna)
+print("\nBest point (x,y) = ({}, {})".format(best_x_real, best_y_real))
+print("    Best fitness = {}".format(fBestAntenna))
 print("Computation time = {:.4f} ms\n".format(total*1000))
+# -------------------------------------------------------------------------------------------------------------------------------------
