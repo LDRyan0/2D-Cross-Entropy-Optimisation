@@ -25,9 +25,9 @@ def func(x,y): # x and y are vectors
     # Booth's
     # return -(np.square(x+2*y-7)+np.square(2*x+y-5))
     # Paraboloid
-    # return -(np.square(x-2) + np.square(y+1))
+    return -(np.square(x-2) + np.square(y+1))
     # Ackley's
-    return -(-20*np.exp(-0.2*np.sqrt(0.5*(np.square(x)+np.square(y))))-np.exp(0.5*(np.cos(2*math.pi*x)+np.cos(2*math.pi*y)))+20+math.exp(1))
+    # return -(-20*np.exp(-0.2*np.sqrt(0.5*(np.square(x)+np.square(y))))-np.exp(0.5*(np.cos(2*math.pi*x)+np.cos(2*math.pi*y)))+20+math.exp(1))
 
 # --------------------------------------------------------------
 
@@ -41,13 +41,13 @@ fBestAntenna_plot = np.zeros(N_it)
 # Set initial distribution parameters
 beta_alpha = np.ones((2,1)) # x and y values for alpha
 beta_beta = np.ones((2,1)) # x and y values for beta
-
+  
 # Creating the grid
 x_vec = np.linspace(x_range[0], x_range[1], 100)
 y_vec = np.linspace(y_range[0], y_range[1], 100) 
 
 # Obtain the 2D function values
-f = func(x_vec[:, None], y_vec[None, :])
+f = func(y_vec[None, :], x_vec[:, None])
 
 ## Start Cross-Entropy Optimization Algorithm
 for i in range(N_it):
