@@ -1,8 +1,7 @@
 # Cross Entropy 2D Optimisation (Beta Distribution)
 
 **Copyright 2021, Liam Ryan, Maria Kovaleva, David Bulger. All rights reserved.  
-Adapted & extended for visualisations of the Cross-Entropy Algorithm from original MATLAB files to Python/Jupyter by Liam Ryan (2021).
-Special thanks to David Bulger in his assistance.**
+Adapted & extended for visualisations of the Cross-Entropy Algorithm from original MATLAB files to Python/Jupyter by Liam Ryan (2021). Special thanks to David Bulger in his assistance.**
 
 Two dimensional optimisation algorithm using the [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method) used for visualisation purposes.
 Data is iteratively fitted to a [Beta Distribution](https://en.wikipedia.org/wiki/Beta_distribution) in the algorithm. Parameters and the [fitness function](https://en.wikipedia.org/wiki/Fitness_function) can easily be changed.
