@@ -11,6 +11,6 @@ Access the interactive Jupyter Notebook through Google Colaboratory [here](https
 
 Example Optimisation Problem       |  Example Generation Progress
 :-------------------------:|:-------------------------:
-<img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/Sources/example_problem.JPG" height="300" /> |  <img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png" height="300" /> 
+<img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/Sources/example_problem.JPG" height="256" /> |  <img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png" height="256" /> 
 
 
