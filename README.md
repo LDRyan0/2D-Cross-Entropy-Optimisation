@@ -16,6 +16,12 @@ Access the interactive Jupyter Notebook through Google Colaboratory [here](https
 
 ![alt text](https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png)
 
-Solarized dark             |  Solarized Ocean
+Example Optimisation Problem       |  Example Generation Progress
 :-------------------------:|:-------------------------:
 ![](https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/Sources/example_problem.JPG)  |  ![](https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png)
+
+Example Optimisation Problem       |  Example Generation Progress
+:-------------------------:|:-------------------------:
+<img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/Sources/example_problem.JPG" height="100" /> |  <img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png" height="100" /> 
+
+
