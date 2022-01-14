@@ -7,4 +7,8 @@ Special thanks to David Bulger in his assistance.**
 Two dimensional optimisation algorithm using the [Cross Entropy Method](https://en.wikipedia.org/wiki/Cross-entropy_method) used for visualisation purposes.
 Data is iteratively fitted to a [Beta Distribution](https://en.wikipedia.org/wiki/Beta_distribution) in the algorithm. Parameters and the [fitness function](https://en.wikipedia.org/wiki/Fitness_function) can easily be changed.
 
+![alt text](https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png?raw=true)
+
+https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png
+
 Access the interactive Jupyter Notebook through Google Colaboratory [here](https://colab.research.google.com/github/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/ce_optimisation_beta_dist.ipynb).
