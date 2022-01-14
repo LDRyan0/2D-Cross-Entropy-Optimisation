@@ -9,19 +9,8 @@ Data is iteratively fitted to a [Beta Distribution](https://en.wikipedia.org/wik
 
 Access the interactive Jupyter Notebook through Google Colaboratory [here](https://colab.research.google.com/github/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/ce_optimisation_beta_dist.ipynb).
 
-<p float="left">
-  <img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/Sources/example_problem.JPG" width="100" />
-  <img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png" width="100" /> 
-</p>
-
-![alt text](https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png)
-
 Example Optimisation Problem       |  Example Generation Progress
 :-------------------------:|:-------------------------:
-![](https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/Sources/example_problem.JPG)  |  ![](https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png)
-
-Example Optimisation Problem       |  Example Generation Progress
-:-------------------------:|:-------------------------:
-<img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/Sources/example_problem.JPG" height="100" /> |  <img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png" height="100" /> 
+<img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/Sources/example_problem.JPG" height="300" /> |  <img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png" height="300" /> 
 
 
