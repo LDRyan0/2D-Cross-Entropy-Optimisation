@@ -8,7 +8,7 @@ Two dimensional optimisation algorithm using the [Cross Entropy Method](https://
 
 Access the interactive Jupyter Notebook through Google Colaboratory [here](https://colab.research.google.com/github/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/ce_optimisation_beta_dist.ipynb).
 
-Example Optimisation Problem       |  Example Generation Progress
+Example Multidimensional Optimisation Problem       |  Example Generation Progress
 :-------------------------:|:-------------------------:
 <img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/Sources/example_problem.JPG" height="200" /> |  <img src="https://github.com/LDRyan0/2D-Cross-Entropy-Optimisation/blob/main/example_gen.png" height="200" /> 
 
